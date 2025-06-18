@@ -42,18 +42,38 @@
 }
 
 body {
+    overflow-x: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     background-color: #020202;
     background-image: url(../assets/background.png);
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
-    margin-left: 13.375rem;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    background-color: #77C0AA;
+
+    & .logo{
+        max-width: 11rem;
+        margin-block: 5rem;
+    }
+
+    & section, aside {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 section{
     width: 31.75rem;
-    height: 13.2rem;
+    background-color: #91A1FA;
 
     & .degrade{
         background-image: linear-gradient(to right, var(--content-secondary) 0%, var(--background-gray) 100%);
@@ -72,6 +92,7 @@ section{
 
 .info {
     width: 24.125rem;
+    
 
    & img{
         width: 1.25rem;;
@@ -80,7 +101,6 @@ section{
     & span{
         color: var(--accent-pink);
         font: var(--paragraph-md);
-        height: 1.3rem;
     }
 
     & p{
@@ -91,7 +111,56 @@ section{
 
 }
 
+
 aside{
-    width: 7.625rem;
-    margin-left: 25rem;
-}
+    background-color: #C58DE7;
+    width: 30rem;
+    margin-left: 31rem;
+    padding-block: 1.7rem;
+    
+    
+    & h1{
+        font: var(--label-md);
+        color: var(--content-primary);
+    }
+
+    & p {
+        font: var(--paragraph-lg);
+        color: var(--content-secondary);
+    }
+
+    & form{
+        display: flex;
+        gap: .75rem;
+        margin-bottom: 2.5rem;
+
+        & .input{
+            margin-top: 2.5rem;
+            border: none;
+            width: 5.35rem;
+            height: 5.35rem;
+        }
+
+        & legend{
+            font: var(--label-md);
+            color: var(--content-secondary);
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        & input{
+            width: 5.925rem;
+            background-color: var(--background-secondary);
+            border: none;
+            border-radius: 0.5rem;
+            font: var(--display-sm);
+            text-align: center;
+            color: var(--content-primary);
+        }   
+    }
+
+} 
+
+    
+
+        

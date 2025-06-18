@@ -22,7 +22,8 @@
 </head>
 <body>
     <main>
-        <img src="assets/logo.png" alt="logo da Numbers">
+        <img src="assets/logo.png" alt="logo da Numbers" class="logo">
+        
         <section>
             <header>
                 <p class="degrade">ONLINE GRATUITO</p>
@@ -42,6 +43,23 @@
             <h1>Quero Sortear:</h1>
             <p>defina o intervalo e a quantidade de números, clique em "Sortear" e veja os resultados na tela. É rápido e fácil!</p>
 
+            <form>
+              <fieldset class="input">
+                <legend>NÚMEROS</legend>
+                <input type="text" name="numbers-quantity" id="numbers-quantity">
+              </fieldset> 
+
+              <fieldset class="input">
+                <legend>DE</legend>
+                <input type="text" name="start-range" id="start-range">
+              </fieldset>  
+
+              <fieldset class="input">
+                <legend>ATÉ</legend>
+                <input type="text" name="end-range" id="end-range">
+              </fieldset>
+            </form>
+            
         </aside>
     </main>
     <script src="scripts.js"></script>
