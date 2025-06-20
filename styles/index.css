@@ -56,24 +56,19 @@ body {
 }
 
 main{
-    display: flex;
-    flex-direction: column;
-    background-color: #77C0AA;
-
     & .logo{
         max-width: 11rem;
         margin-block: 5rem;
     }
-
-    & section, aside {
-        display: flex;
-        flex-direction: column;
-    }
 }
+
+#content{
+        display: flex;
+    }
+
 
 section{
     width: 31.75rem;
-    background-color: #91A1FA;
 
     & .degrade{
         background-image: linear-gradient(to right, var(--content-secondary) 0%, var(--background-gray) 100%);
@@ -113,12 +108,10 @@ section{
 
 
 aside{
-    background-color: #C58DE7;
     width: 30rem;
-    margin-left: 31rem;
+    margin-left: 3rem;
     padding-block: 1.7rem;
-    
-    
+      
     & h1{
         font: var(--label-md);
         color: var(--content-primary);
@@ -157,10 +150,80 @@ aside{
             text-align: center;
             color: var(--content-primary);
         }   
+
+    }
+    
+    & .can-repeat{
+        display: flex;
+        margin-bottom: 2.5rem;
+
+        & span{
+        font: var(--label-sm);
+        color: var(--content-primary);
+        margin-left: .5rem;
+        }
     }
 
-} 
-
-    
-
+    & button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .5rem;
+        width: 30.125rem;
+        height: 3.5rem;
+        border: none;
+        border-radius: .5rem;
+        background-color: var(--background-tertiary);
+        font: var(--label-md);
+        color: var(--content-primary);
         
+    }
+}
+
+footer{
+    
+}
+
+@media (width <= 50em){
+
+    body{
+        width: 22rem;
+    }
+
+    main{
+        & .logo{
+            margin-left: 35%;
+            margin-block: 3rem;
+        }
+    }
+
+    #content{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    section{
+        margin-top: .5rem;
+        width: 19.9rem;
+
+        & h1{
+            font: var(--display-md);
+        }
+    }
+
+    aside{
+        width: 19.9rem;
+        margin-left: .5rem;
+
+        & button{
+            width: 19.9rem;
+        }
+    }
+
+    footer{
+        width: 19.9rem;
+        margin-left: .5rem;
+    }
+}
+    
