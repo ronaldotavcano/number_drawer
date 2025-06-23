@@ -43,6 +43,10 @@
 
 }
 
+.hidden{
+    display: hidden;
+}
+
 body {
     overflow-x: hidden;
     display: flex;
