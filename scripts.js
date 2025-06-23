@@ -20,6 +20,7 @@ form.onsubmit = (event) => {
 
 function createArray(info) {
     let result = [];
+    let list = [];
 
     if (info.qtd <= 0) {
         alert("Selecione um valor válido");
@@ -31,38 +32,54 @@ function createArray(info) {
         return;
     }
 
-    if (info.option == true) {
-        let list = [];
-
+    if (info.option == true){
         for (let i = info.min; i <= info.max; i++) {
             list.push(i);
         }
-
         shuffleNoRepeat(list);
         result = list.slice(0, info.qtd);
-    } else {
-        for (let i = 0; i < info.qtd; i++) {
-            let randomNumber = Math.floor(Math.random() * (info.max - info.min + 1)) + info.min;
-            result.push(randomNumber);
+    } else{
+        for (let i = 0; i < info.qtd; i++){
+            let randomNumber = Math.floor(Math.random() * (info.max - info.min + 1)) + info.min
+            result.push(randomNumber)
         }
     }
 
-    // Criar nova div com conteúdo
     const newDiv = document.createElement("div");
     newDiv.classList.add("resultado");
 
-    const title = document.createElement("p");
-    title.textContent = "Números sorteados:";
+    const title = document.createElement("h1");
+    title.textContent = "RESULTADO DO SORTEIO";
     newDiv.appendChild(title);
 
-    result.forEach(number => {
-        const span = document.createElement("span");
-        span.textContent = number;
-        span.classList.add("numero-sorteado");
-        newDiv.appendChild(span);
+    const span = document.createElement("span");
+    span.textContent = "1º RESULTADO";
+    newDiv.appendChild(span);
+
+    // Cria um container para todos os números sorteados
+    const container = document.createElement("div");
+    container.classList.add("container-numeros");
+
+    result.forEach((number) => {
+        const numberSpan = document.createElement("span");
+        numberSpan.textContent = number;
+        numberSpan.classList.add("numero-sorteado");
+        container.appendChild(numberSpan);
     });
 
-    
+    // Adiciona todos os números ao newDiv
+    newDiv.appendChild(container);
+
+    // Substitui a div antiga
     const old = document.getElementById("old");
     old.replaceWith(newDiv);
+}
+
+function shuffleNoRepeat(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1)); 
+        let temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
 }
